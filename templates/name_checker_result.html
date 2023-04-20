@@ -1,0 +1,15 @@
+{% extends "name_checker_base.html"%}
+
+{% block content %}
+<h1>Your username: {{username}}</h1>
+
+{% if not any(char.isupper() for char in text):%}
+        {% return False %}
+        {% if not any(char.islower() for char in text):%}
+        {% return False %}
+        {% if not text[-1].isdigit():%}
+        {% return False%}
+        {%return True%}
+
+
+{% endblock %}

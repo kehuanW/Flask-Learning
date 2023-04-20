@@ -9,7 +9,23 @@
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <h1>Hello {{name}}</h1>
+    <img src="../static/pic1.jpg" alt="">
+    <h2>{{letters[2:]}}</h2>
+    <h2>{{pup_dic['pup_name']}}</h2>
+
+    <ul>
+        {% for i in mylist: %}
+        {% if (i < 3): %}
+        <li>{{i}} < 3</li>
+        {% elif (i < 5): %}
+        <li>{{i}} < 5</li>
+        {% else: %}
+        <li>good</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
 </body>
 
 </html>
