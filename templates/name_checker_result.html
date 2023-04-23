@@ -3,13 +3,20 @@
 {% block content %}
 <h1>Your username: {{username}}</h1>
 
-{% if not any(char.isupper() for char in text):%}
-        {% return False %}
-        {% if not any(char.islower() for char in text):%}
-        {% return False %}
-        {% if not text[-1].isdigit():%}
-        {% return False%}
-        {%return True%}
-
+{% if report %}
+<p>Your username passed all checks!</p>
+{% else%}
+<ul>
+        {% if not lower%}
+        <li>You did not use a lowercase letter</li>
+        {% endif %}
+        {% if not upper%}
+        <li>You did not use a uppercase letter</li>
+        {% endif %}
+        {% if not num_end%}
+        <li>You did not end with a num</li>
+        {% endif %}
+</ul>
+{% endif %}
 
 {% endblock %}

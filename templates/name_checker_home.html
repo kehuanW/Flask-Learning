@@ -2,20 +2,20 @@
 
 {% block content%}
 <h1>Home Page</h1>
-    
-    Welcome to User Name Checker
-    Let's see if your user name is secure!
-    <ul>
-        Fill out the form
-        <li>Must have an uppercase letter somewhere</li>
-        <li>Must have a lower case letter somewhere</li>
-        <li>Must have a number at the end</li>
-    </ul>
 
-    <form action="/name_checker_result.html">
+Welcome to User Name Checker
+Let's see if your user name is secure!
+<ul>
+    Fill out the form
+    <li>Must have an uppercase letter somewhere</li>
+    <li>Must have a lower case letter somewhere</li>
+    <li>Must have a number at the end</li>
+</ul>
+
+<form action="{{url_for('result')}}">
     <label for="username">Username</label>
-    <input type="text" id="username" />
+    <input type="text" name="username" />
     <button>Submit the Form</button>
 </form>
 
-    {% endblock %}
+{% endblock %}
